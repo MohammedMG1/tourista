@@ -3,15 +3,30 @@
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
-    </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
-    </a>
+    <div class="card" >
+        <img class="card-img-top" src="{{destination.pretty_picture.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{destination.name}}</h5>
+          <p class="card-text">{{destination.description}}</p>
+          <p class="card-text">{{destination.activities}}</p>
+          <a href="{% url 'destination-update' destination.id %}" class="btn btn-primary"><i class="fas fa-edit"></i>Update</a>
+          <a href="{% url 'destination-delete' destination.id %}" class="btn btn-primary"><i class="fas fa-trash"></i>Delete</a>
+        </div>
+    </div>
+   
 {% endblock content %}
+
+
+{% comment %}
+<p>{{destination.name}}</p>
+<p>{{destination.description}}</p>
+<p>{{destination.activities}}</p>
+<p><img src="{{destination.pretty_picture.url}}"></p>
+<p>{{destination.optimal_visiting_season}}</p>
+<a href="{% url 'destination-update' destination.id %}">
+    <button>Update</button>
+</a>
+<a href="{% url 'destination-delete' destination.id %}">
+    <button>Delete</button>
+</a>
+{% endcomment %}

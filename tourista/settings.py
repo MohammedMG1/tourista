@@ -40,9 +40,11 @@ INSTALLED_APPS = [
 
     'destinations',
     'crispy_forms',
+
 ]
 
 # Uncomment the following line to include crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
